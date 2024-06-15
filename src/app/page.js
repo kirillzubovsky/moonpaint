@@ -19,7 +19,9 @@ const textClasses = [
 
 export default function BooksIndexPage() {
 
-  const [address, setAddress] = useState("Enter address here...");
+  const presetInputPrompt = "Enter address here..."
+
+  const [address, setAddress] = useState(presetInputPrompt);
   const [imageUrl, setImageUrl] = useState('');
 
   const houseImgAddress = [
@@ -73,6 +75,7 @@ export default function BooksIndexPage() {
     const randomImage = houseImgList[Math.floor(Math.random() * houseImgList.length)];
     setImageUrl(randomImage);
     // Function body will be implemented later
+    setAddress(presetInputPrompt);
   }  
 
   return (

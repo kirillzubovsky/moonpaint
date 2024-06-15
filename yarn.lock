@@ -644,6 +644,16 @@
   resolved "https://registry.npmjs.org/@eslint/js/-/js-8.57.0.tgz"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
+"@fal-ai/serverless-client@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.npmjs.org/@fal-ai/serverless-client/-/serverless-client-0.11.0.tgz"
+  integrity sha512-S8yI/eAF9E4hQWHu+xV1soGgPLtp3KL/OoeRKsZddGRtuEc9BPt4JN3otCvr7uWmuSrbrVTh048ZArP8onluJQ==
+  dependencies:
+    "@msgpack/msgpack" "^3.0.0-beta2"
+    eventsource-parser "^1.1.2"
+    robot3 "^0.4.1"
+    uuid-random "^1.3.2"
+
 "@fastify/busboy@^2.0.0":
   version "2.1.1"
   resolved "https://registry.npmjs.org/@fastify/busboy/-/busboy-2.1.1.tgz"
@@ -743,6 +753,11 @@
   integrity sha512-dCHW/oEX0KJ4NjDULBo3JiOaK5+6axtpBbS+ao2ZInoAL9/YRQLhXzSNAFz7hP4nzLkIqsfYAK/PDE3+XHny0Q==
   dependencies:
     sparse-bitfield "^3.0.3"
+
+"@msgpack/msgpack@^3.0.0-beta2":
+  version "3.0.0-beta2"
+  resolved "https://registry.npmjs.org/@msgpack/msgpack/-/msgpack-3.0.0-beta2.tgz"
+  integrity sha512-y+l1PNV0XDyY8sM3YtuMLK5vE3/hkfId+Do8pLo/OPxfxuFAUwcGz3oiiUuV46/aBpwTzZ+mRWVMtlSKbradhw==
 
 "@next/bundle-analyzer@^14.2.0":
   version "14.2.3"
@@ -2329,6 +2344,11 @@ esutils@^2.0.2:
   resolved "https://registry.npmjs.org/esutils/-/esutils-2.0.3.tgz"
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
 
+eventsource-parser@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/eventsource-parser/-/eventsource-parser-1.1.2.tgz"
+  integrity sha512-v0eOBUbiaFojBu2s2NPBfYUoRR9GjcDNvCXVaqEf5vVfpIAh9f8RCo4vXTP8c63QRKCFwoLpMpTdPwwhEKVgzA==
+
 fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   version "3.1.3"
   resolved "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz"
@@ -3606,6 +3626,11 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
+robot3@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.npmjs.org/robot3/-/robot3-0.4.1.tgz"
+  integrity sha512-hzjy826lrxzx8eRgv80idkf8ua1JAepRc9Efdtj03N3KNJuznQCPlyCJ7gnUmDFwZCLQjxy567mQVKmdv2BsXQ==
+
 run-parallel@^1.1.9:
   version "1.2.0"
   resolved "https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz"
@@ -4078,6 +4103,11 @@ util-deprecate@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
+
+uuid-random@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.npmjs.org/uuid-random/-/uuid-random-1.3.2.tgz"
+  integrity sha512-UOzej0Le/UgkbWEO8flm+0y+G+ljUon1QWTEZOq1rnMAsxo2+SckbiZdKzAHHlVh6gJqI1TjC/xwgR50MuCrBQ==
 
 uuid@^9.0.1:
   version "9.0.1"
