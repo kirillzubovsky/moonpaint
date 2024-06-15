@@ -80,7 +80,7 @@ export default function BooksIndexPage() {
     
     try {
       
-      const response = await fetch(`/api/moon/generate`,{
+      const response = await fetch(`/api/moon/gradio`,{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
