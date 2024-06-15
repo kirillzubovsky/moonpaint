@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.unsplash.com',
+        hostname: 'moonpaint.s3.us-west-1.amazonaws.com',
       },
     ],
   },

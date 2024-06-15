@@ -23,11 +23,24 @@ export default function BooksIndexPage() {
   const [imageUrl, setImageUrl] = useState('');
 
   const imgList = [
-  "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
-  "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
-  "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-  "https://images.unsplash.com/photo-1530731141654-5993c3016c77",
-    
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/bad_001.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/bad_002.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/bad_003.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/bad_004.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/bad_005.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/bad_006.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/good_001.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/good_002.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/good_003.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/good_004.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/good_005.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/good_006.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/med_001.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/med_002.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/med_003.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/med_004.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/med_005.jpg",
+  "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/med_006.jpg",
   ]
 
   function handleFormSubmit(e) {
