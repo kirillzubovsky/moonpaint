@@ -180,8 +180,8 @@ export default function BooksIndexPage() {
         </div>
         <div className="postcard-content">
           <div className="postcard-address">
-            <h3>To:</h3>
-            <p>{address}</p>
+            <h3 style={{ textAlign: 'left' }}>To:</h3>
+            <p style={{ textAlign: 'left' }}>{address}</p>
             <hr></hr>
           </div>
           <div className="postcard-message handwriting">
@@ -241,7 +241,9 @@ export default function BooksIndexPage() {
                   </div>
                 )}
               </div>
-
+              
+              <div className="mt-6">
+              </div>
               <div className="flex justify-center w-full mb-1 max-md:mt-[2em] relative">
                 {typeof moonResponse === 'string' && moonResponse.length > 4 && 
                   <>
@@ -252,7 +254,7 @@ export default function BooksIndexPage() {
                         width={50} 
                         height={150} 
                       />
-                    </div>                  
+                    </div>
                     <Postcard address={address} imageUrl={imageUrl} message={OpenAIResponse} />
                   </>
                 }

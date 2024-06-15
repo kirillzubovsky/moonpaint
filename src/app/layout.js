@@ -4,8 +4,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'The Novice | Learn Everything',
-  description: 'Learn something new every episode. The Novice is a new podcast and a newsletter by Kirill Zubovsky',
+  title: 'Moon Paint | Moondream Based House Painting',
+  description: 'It is what it is',
 }
 
 export default function RootLayout({ children }) {
