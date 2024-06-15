@@ -199,7 +199,7 @@ export default function BooksIndexPage() {
           <div className='m-auto'>
             <div className="mr-auto flex-center w-full mb-1 max-md:mt-[2em] text-center">
 
-              <div className="mr-auto mt-5 mb-5 flex-start w-full text-2xl font-semibold text-violet-500">
+              <div className="mr-auto mt-5 mb-[2em] flex-start w-full text-2xl font-semibold text-violet-500">
                 
                   <RainbowText
                     text="MoonPaint"
@@ -235,22 +235,22 @@ export default function BooksIndexPage() {
                         onLoad={() => generateMoonResponse(imageUrl)}
                         />
                       </div>
-                      <div className="flex-1 pl-[14px] md:pl-4">
-                        {moonResponse}
+                      <div className="flex-1 md:pl-4 text-justify">
+                        <p className='pl-[1em]'>{moonResponse}</p>
                       </div>
                     </div>
                   </div>
                 )}
               </div>
               
-              <div className="mt-6">
+              <div className="mt-[4em]">
               </div>
 
               {typeof OpenAIResponse === 'string' && OpenAIResponse.length > 4 && 
                 <div className="flex justify-center w-full mb-1 max-md:mt-[2em] relative">
                   
                     <>
-                      <div className="mt-5 absolute" style={{top:"-5%", right: "25%"}}>
+                      <div className="mt-5 absolute" style={{top:"-5%", right: "22%"}}>
                         <Image 
                           src="/arrow-down.png" 
                           alt="Arrow Down" 

@@ -59,12 +59,12 @@ body {
 
 .postcard-address,
 .postcard-message {
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 
 .postcard-address h3,
 .postcard-message h3 {
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
   font-size: 1.2em;
 }
 
