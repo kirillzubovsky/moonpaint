@@ -200,13 +200,14 @@ export default function BooksIndexPage() {
             <div className="mr-auto flex-center w-full mb-1 max-md:mt-[2em] text-center">
 
               <div className="mr-auto mt-5 mb-5 flex-start w-full text-2xl font-semibold text-violet-500">
-                <h1 className='mb-[2em]'>
+                
                   <RainbowText
                     text="MoonPaint"
                     classes={textClasses}
                     delay={8000}
+                    className='mb-[2em]'
                   />
-                </h1>
+                
               </div>
 
               <div className="mt-5">
