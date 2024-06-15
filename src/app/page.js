@@ -244,21 +244,24 @@ export default function BooksIndexPage() {
               
               <div className="mt-6">
               </div>
-              <div className="flex justify-center w-full mb-1 max-md:mt-[2em] relative">
-                {typeof moonResponse === 'string' && moonResponse.length > 4 && 
-                  <>
-                    <div className="mt-5 absolute" style={{top:"-5%", right: "25%"}}>
-                      <Image 
-                        src="/arrow-down.png" 
-                        alt="Arrow Down" 
-                        width={50} 
-                        height={150} 
-                      />
-                    </div>
-                    <Postcard address={address} imageUrl={imageUrl} message={OpenAIResponse} />
-                  </>
-                }
-              </div>
+
+              {typeof OpenAIResponse === 'string' && OpenAIResponse.length > 4 && 
+                <div className="flex justify-center w-full mb-1 max-md:mt-[2em] relative">
+                  
+                    <>
+                      <div className="mt-5 absolute" style={{top:"-5%", right: "25%"}}>
+                        <Image 
+                          src="/arrow-down.png" 
+                          alt="Arrow Down" 
+                          width={50} 
+                          height={150} 
+                        />
+                      </div>
+                      <Postcard address={address} imageUrl={imageUrl} message={OpenAIResponse} />
+                    </>
+                  
+                </div>
+              }
 
             </div>
           </div>
