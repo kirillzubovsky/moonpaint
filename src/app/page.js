@@ -73,7 +73,7 @@ export default function BooksIndexPage() {
     const randomImage = houseImgList[Math.floor(Math.random() * houseImgList.length)];
     setImageUrl(randomImage);
     // Function body will be implemented later
-    setAddress(presetInputPrompt);
+    // setAddress(presetInputPrompt);
   }  
 
   const generateMoonResponse = async (imgUrl) => {
@@ -102,12 +102,33 @@ export default function BooksIndexPage() {
     }      
   }
 
+  const Postcard = ({ address, imageUrl, message }) => {
+    return (
+      <div className="postcard">
+        <div className="postcard-image">
+          <img src={imageUrl} alt="Postcard" />
+        </div>
+        <div className="postcard-content">
+          <div className="postcard-address">
+            <h3>Address:</h3>
+            <p>{address}</p>
+          </div>
+          <div className="postcard-message">
+            <h3>Message:</h3>
+            <p>{message}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       <main className="marketing flex flex-col justify-start subpixel-antialiased overflow-hidden">
         <div className='w-full px-6 pb-[4em] text-center sm:pt-32 lg:px-8'>
           <div className='m-auto'>
             <div className="mr-auto flex-center w-full mb-1 max-md:mt-[2em] text-center">
+
               <div className="mr-auto mt-5 mb-5 flex-start w-full text-2xl font-semibold text-violet-500">
                 <h1 className='mb-[2em]'>
                   <RainbowText
@@ -149,6 +170,22 @@ export default function BooksIndexPage() {
                     </div>
                   </div>
                 )}
+              </div>
+
+              <div className="flex justify-center w-full mb-1 max-md:mt-[2em] relative">
+                {moonResponse && 
+                  <>
+                    <div className="mt-5 absolute" style={{top:"-5%", right: "25%"}}>
+                      <Image 
+                        src="/arrow-down.png" 
+                        alt="Arrow Down" 
+                        width={50} 
+                        height={150} 
+                      />
+                    </div>                  
+                    <Postcard address={address} imageUrl={imageUrl} message={moonResponse} />
+                  </>
+                }
               </div>
 
             </div>
