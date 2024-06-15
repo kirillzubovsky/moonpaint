@@ -110,11 +110,11 @@ export default function BooksIndexPage() {
         </div>
         <div className="postcard-content">
           <div className="postcard-address">
-            <h3>Address:</h3>
+            <h3>To:</h3>
             <p>{address}</p>
+            <hr></hr>
           </div>
-          <div className="postcard-message">
-            <h3>Message:</h3>
+          <div className="postcard-message handwriting">
             <p>{message}</p>
           </div>
         </div>
