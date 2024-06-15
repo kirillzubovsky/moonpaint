@@ -77,6 +77,8 @@ export default function BooksIndexPage() {
   }  
 
   const generateMoonResponse = async (imgUrl) => {
+
+    setMoonResponse("Dreaming...");
     
     try {
       
@@ -95,15 +97,6 @@ export default function BooksIndexPage() {
       console.log("\u001b[1;32m What do we get in response FROM API/MOON/GENERATE: ", responseData);
       setMoonResponse(responseData.result);
     
-      // if (response.ok) {
-        
-      //   const data = await response.json();
-      //   console.log("\u001b[1;32m Message Response", data);
-
-      //   setMoonResponse(moonResponse => [...moonResponse, data]);
-        
-      // }
-
     } catch (error) {
       console.error('Error fetching moon response data:', error);
     }      
@@ -151,7 +144,7 @@ export default function BooksIndexPage() {
                         />
                       </div>
                       <div className="flex-1 pl-[14px] md:pl-4">
-                        Moon Response: {moonResponse}
+                        {moonResponse}
                       </div>
                     </div>
                   </div>
