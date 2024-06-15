@@ -89,15 +89,20 @@ export default function BooksIndexPage() {
           imgUrl: imgUrl  // Assuming input is the correct format for prompt
         })
       });
-    
-      if (response.ok) {
-        
-        const data = await response.json();
-        console.log("\u001b[1;32m Message Response", data);
 
-        setMoonResponse(moonResponse => [...moonResponse, data]);
+      const responseData = await response.json();
+
+      console.log("\u001b[1;32m What do we get in response FROM API/MOON/GENERATE: ", responseData);
+      setMoonResponse(responseData.result);
+    
+      // if (response.ok) {
         
-      }
+      //   const data = await response.json();
+      //   console.log("\u001b[1;32m Message Response", data);
+
+      //   setMoonResponse(moonResponse => [...moonResponse, data]);
+        
+      // }
 
     } catch (error) {
       console.error('Error fetching moon response data:', error);
@@ -145,7 +150,9 @@ export default function BooksIndexPage() {
                       onLoad={() => generateMoonResponse(imageUrl)}
                       />
                     </div>
-                    <div>{moonResponse}</div>
+                    <div className="mt-5">
+                      Moon Response: {moonResponse}
+                    </div>
                   </div>
                 )}
               </div>

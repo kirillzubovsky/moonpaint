@@ -1,6 +1,7 @@
 
 // npm install @fal-ai/serverless-client
 import * as fal from "@fal-ai/serverless-client";
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req) {
 
@@ -25,7 +26,8 @@ export async function POST(req) {
   });
 
   console.log("\u001b[1;32m We have a result from the Moondream API: ", result);
+  const output = result.outputs[0];
 
-  return NextResponse.json({ result: result}, {status: 200});
+  return NextResponse.json({ result: output }, {status: 200});
 
 }
