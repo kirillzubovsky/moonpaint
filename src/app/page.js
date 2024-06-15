@@ -116,12 +116,11 @@ export default function BooksIndexPage() {
           <div className='m-auto'>
             <div className="mr-auto flex-center w-full mb-1 max-md:mt-[2em] text-center">
               <div className="mr-auto mt-5 mb-5 flex-start w-full text-2xl font-semibold text-violet-500">
-                <h1>
+                <h1 className='mb-[2em]'>
                   <RainbowText
                     text="MoonPaint"
                     classes={textClasses}
                     delay={8000}
-                    className='text-7xl font-bold text-black-600'
                   />
                 </h1>
               </div>
@@ -144,14 +143,16 @@ export default function BooksIndexPage() {
                   </button>
                 </form>
                 {imageUrl && (
-                  <div>
-                    <div className="mt-5">
-                      <Image src={imageUrl} alt="House Image" width={600} height={400} 
-                      onLoad={() => generateMoonResponse(imageUrl)}
-                      />
-                    </div>
-                    <div className="mt-5">
-                      Moon Response: {moonResponse}
+                  <div className='mt-[3em] flex justify-center'>
+                    <div className="flex flex-col md:flex-row mt-5 max-w-4xl">
+                      <div className="flex-1">
+                        <Image src={imageUrl} alt="House Image" width={600} height={400} 
+                        onLoad={() => generateMoonResponse(imageUrl)}
+                        />
+                      </div>
+                      <div className="flex-1 pl-[14px] md:pl-4">
+                        Moon Response: {moonResponse}
+                      </div>
                     </div>
                   </div>
                 )}

@@ -12,12 +12,12 @@ const RainbowText = ({ text, classes, delay }) => {
         return () => clearInterval(timer);
     }, [classes.length, delay]);
 
-    const currentClass = `${classes[currentIndex]} transition-color`;
+    const currentClass = `${classes[currentIndex]} transition-color text-7xl font-bold text-black-600 Source-Sherif`;
 
     return (
-        <div className={currentClass}>
+        <h1 className={currentClass}>
             {text}
-        </div>
+        </h1>
     );
 };
 
