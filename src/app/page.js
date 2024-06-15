@@ -22,7 +22,28 @@ export default function BooksIndexPage() {
   const [address, setAddress] = useState("Enter address here...");
   const [imageUrl, setImageUrl] = useState('');
 
-  const imgList = [
+  const houseImgAddress = [
+    "2510 Magnolia Blvd W, Seattle, WA 98199",
+    "2607 Magnolia Blvd W, Seattle, WA 98199",
+    "2701 Magnolia Blvd W, Seattle, WA 98199",
+    "2805 Magnolia Blvd W, Seattle, WA 98199",
+    "2903 Magnolia Blvd W, Seattle, WA 98199",
+    "3001 Magnolia Blvd W, Seattle, WA 98199",
+    "3100 Magnolia Blvd W, Seattle, WA 98199",
+    "3202 Magnolia Blvd W, Seattle, WA 98199",
+    "3300 Magnolia Blvd W, Seattle, WA 98199",
+    "3404 Magnolia Blvd W, Seattle, WA 98199",
+    "3502 Magnolia Blvd W, Seattle, WA 98199",
+    "3600 Magnolia Blvd W, Seattle, WA 98199",
+    "3702 Magnolia Blvd W, Seattle, WA 98199",
+    "3800 Magnolia Blvd W, Seattle, WA 98199",
+    "3902 Magnolia Blvd W, Seattle, WA 98199",
+    "4000 Magnolia Blvd W, Seattle, WA 98199",
+    "4102 Magnolia Blvd W, Seattle, WA 98199",
+    "4200 Magnolia Blvd W, Seattle, WA 98199",
+  ]
+
+  const houseImgList = [
   "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/bad_001.jpg",
   "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/bad_002.jpg",
   "https://moonpaint.s3.us-west-1.amazonaws.com/demo/img/bad_003.jpg",
@@ -44,8 +65,12 @@ export default function BooksIndexPage() {
   ]
 
   function handleFormSubmit(e) {
+
+    const houseImgAddress = [
+      
+    ]
     e.preventDefault();
-    const randomImage = imgList[Math.floor(Math.random() * imgList.length)];
+    const randomImage = houseImgList[Math.floor(Math.random() * houseImgList.length)];
     setImageUrl(randomImage);
     // Function body will be implemented later
   }  
@@ -73,9 +98,9 @@ export default function BooksIndexPage() {
                     type="text"
                     placeholder="Enter your address"
                     value={address}
-                    onClick={(e) => setAddress("")}
+                    onClick={(e) => setAddress(houseImgAddress[Math.floor(Math.random() * houseImgAddress.length)])}
                     onChange={(e) => setAddress(e.target.value)}
-                    className="p-2 text-lg border-2 border-gray-300 rounded-lg"
+                    className="p-2 text-lg border-2 border-gray-300 rounded-lg w-1/2"
                   />
                   <button
                     type="submit"
