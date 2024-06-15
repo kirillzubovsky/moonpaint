@@ -25,6 +25,7 @@ export default function BooksIndexPage() {
   const [imageUrl, setImageUrl] = useState('');
   const [moonResponse, setMoonResponse] = useState('');
   const [OpenAIResponse, setOpenAIResponse] = useState('');
+  const [sloppyUrl, setSloppyUrl] = useState('');
 
   const houseImgAddress = [
     "2510 Magnolia Blvd W, Seattle, WA 98199",
@@ -77,6 +78,48 @@ export default function BooksIndexPage() {
     // setAddress(presetInputPrompt);
   }  
 
+    const generateHandwriting = async (OpenAIResponse) => {
+
+    console.log("Hello Sloppy API? ")
+
+    const message = "Dear Home Owner: " + OpenAIResponse.replace(/ /g, '+');
+    const sloppyAPI = `https://sloppyjoe.com/v1/api/handwriting/generate/image?message=${message}`
+
+    console.log("Polling sloppy API: ", sloppyAPI);
+    
+    let redirectUrl = null;
+
+    const fetchSloppyAPI = async () => {
+
+        while (!redirectUrl) {
+            try {
+                const response = await fetch(sloppyAPI, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (response.redirected) {
+                    redirectUrl = response.url;
+                    setSloppyUrl(response.url)
+                } else {
+                    await new Promise(resolve => setTimeout(resolve, 5000));
+                }
+            } catch (error) {
+                console.error('Error calling Sloppy API:', error);
+                await new Promise(resolve => setTimeout(resolve, 5000));
+            }
+        }
+
+        return redirectUrl;
+    };
+
+    fetchSloppyAPI();
+       
+  }
+
+
   const generateOpenAIResponse = async (moonResponse) => {
     
     try {
@@ -95,6 +138,7 @@ export default function BooksIndexPage() {
 
       console.log("\u001b[1;32m Reponse from OpenAI ", responseData);
       setOpenAIResponse(responseData.message);
+      generateHandwriting(responseData.message);
     
     } catch (error) {
       console.error('Error fetching moon response data:', error);
@@ -141,7 +185,7 @@ export default function BooksIndexPage() {
             <hr></hr>
           </div>
           <div className="postcard-message handwriting">
-            <p>{message}</p>
+            {sloppyUrl ? <img src={sloppyUrl} alt="Handwritten Postcard" /> : <p>{message}</p>}
           </div>
         </div>
       </div>
