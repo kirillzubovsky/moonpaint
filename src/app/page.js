@@ -23,6 +23,7 @@ export default function BooksIndexPage() {
 
   const [address, setAddress] = useState(presetInputPrompt);
   const [imageUrl, setImageUrl] = useState('');
+  const [moonResponse, setMoonResponse] = useState('');
 
   const houseImgAddress = [
     "2510 Magnolia Blvd W, Seattle, WA 98199",
@@ -68,15 +69,40 @@ export default function BooksIndexPage() {
 
   function handleFormSubmit(e) {
 
-    const houseImgAddress = [
-      
-    ]
     e.preventDefault();
     const randomImage = houseImgList[Math.floor(Math.random() * houseImgList.length)];
     setImageUrl(randomImage);
     // Function body will be implemented later
     setAddress(presetInputPrompt);
   }  
+
+  const generateMoonResponse = async (imgUrl) => {
+    
+    try {
+      
+      const response = await fetch(`/api/moon/generate`,{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          imgUrl: imgUrl  // Assuming input is the correct format for prompt
+        })
+      });
+    
+      if (response.ok) {
+        
+        const data = await response.json();
+        console.log("\u001b[1;32m Message Response", data);
+
+        setMoonResponse(moonResponse => [...moonResponse, data]);
+        
+      }
+
+    } catch (error) {
+      console.error('Error fetching moon response data:', error);
+    }      
+  }
 
   return (
     <>
@@ -113,8 +139,13 @@ export default function BooksIndexPage() {
                   </button>
                 </form>
                 {imageUrl && (
-                  <div className="mt-5">
-                    <Image src={imageUrl} alt="House Image" width={600} height={400} />
+                  <div>
+                    <div className="mt-5">
+                      <Image src={imageUrl} alt="House Image" width={600} height={400} 
+                      onLoad={() => generateMoonResponse(imageUrl)}
+                      />
+                    </div>
+                    <div>{moonResponse}</div>
                   </div>
                 )}
               </div>

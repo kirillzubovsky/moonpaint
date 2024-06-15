@@ -1,19 +1,19 @@
-// To install @fal-ai/serverless-client, run the following command in your terminal:
+
 // npm install @fal-ai/serverless-client
 import * as fal from "@fal-ai/serverless-client";
 
 export async function POST(req) {
 
-  const imgUrl = await req.json();
+  const request = await req.json();
 
-  console.log("\u001b[1;32m Processing request for image generation with imgUrl param: ", imgUrl);
+  console.log("\u001b[1;32m Processing request for image generation with imgUrl param: ", request);
 
   const result = await fal.subscribe("fal-ai/moondream/batched", {
 
     input: {
       inputs: [{
         prompt: "Describe the quality of house paint. Lead with the answer to this question - should I paint this house? Yes/No.",
-        image_url: imgUrl,
+        image_url: request.imgUrl,
       }]
     },
     logs: true,
