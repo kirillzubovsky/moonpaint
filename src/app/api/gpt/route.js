@@ -10,6 +10,8 @@ export async function POST(req) {
   const data = await req.json();
   const moonresponse = data.moonresponse;
 
+  var generatedText = "";
+
   try {
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
@@ -35,7 +37,7 @@ export async function POST(req) {
     );
 
     // Extracting the generated text from the response
-    const generatedText = response.data.choices[0].message.content;
+    generatedText = response.data.choices[0].message.content;
     // console.log(response.data.choices[0]);
 
   } catch (error) {

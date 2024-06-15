@@ -24,6 +24,7 @@ export default function BooksIndexPage() {
   const [address, setAddress] = useState(presetInputPrompt);
   const [imageUrl, setImageUrl] = useState('');
   const [moonResponse, setMoonResponse] = useState('');
+  const [OpenAIResponse, setOpenAIResponse] = useState('');
 
   const houseImgAddress = [
     "2510 Magnolia Blvd W, Seattle, WA 98199",
@@ -76,6 +77,30 @@ export default function BooksIndexPage() {
     // setAddress(presetInputPrompt);
   }  
 
+  const generateOpenAIResponse = async (moonResponse) => {
+    
+    try {
+      
+      const response = await fetch(`/api/gpt`,{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          moonresponse: moonResponse
+        })
+      });
+
+      const responseData = await response.json();
+
+      console.log("\u001b[1;32m Reponse from OpenAI ", responseData);
+      setOpenAIResponse(responseData.message);
+    
+    } catch (error) {
+      console.error('Error fetching moon response data:', error);
+    }      
+  }
+
   const generateMoonResponse = async (imgUrl) => {
 
     setMoonResponse("Dreaming...");
@@ -96,6 +121,7 @@ export default function BooksIndexPage() {
 
       console.log("\u001b[1;32m What do we get in response FROM API/MOON/GENERATE: ", responseData);
       setMoonResponse(responseData.result);
+      generateOpenAIResponse(responseData.result);
     
     } catch (error) {
       console.error('Error fetching moon response data:', error);
@@ -183,7 +209,7 @@ export default function BooksIndexPage() {
                         height={150} 
                       />
                     </div>                  
-                    <Postcard address={address} imageUrl={imageUrl} message={moonResponse} />
+                    <Postcard address={address} imageUrl={imageUrl} message={OpenAIResponse} />
                   </>
                 }
               </div>
