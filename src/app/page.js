@@ -23,7 +23,7 @@ export default function BooksIndexPage() {
 
   const [address, setAddress] = useState(presetInputPrompt);
   const [imageUrl, setImageUrl] = useState('');
-  const [moonResponse, setMoonResponse] = useState('');
+  const [moonResponse, setMoonResponse] = useState("");
   const [OpenAIResponse, setOpenAIResponse] = useState('');
   const [sloppyUrl, setSloppyUrl] = useState('');
 
@@ -243,7 +243,7 @@ export default function BooksIndexPage() {
               </div>
 
               <div className="flex justify-center w-full mb-1 max-md:mt-[2em] relative">
-                {moonResponse && 
+                {typeof moonResponse === 'string' && moonResponse.length > 4 && 
                   <>
                     <div className="mt-5 absolute" style={{top:"-5%", right: "25%"}}>
                       <Image 
